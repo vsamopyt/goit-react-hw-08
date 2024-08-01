@@ -4,8 +4,10 @@ import ContactForm from '../ContactForm/ContactForm';
 import BarLoader from 'react-spinners/BarLoader';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from '../../redux/contactsOps';
-import { selectIsLoaded, selectIsError} from '../../redux/contactsSlice';
+// import { fetchContacts } from '../../redux/contactsOps';
+import { fetchContacts } from '../../redux/contacts/operations';
+// import { selectIsLoaded, selectIsError} from '../../redux/contactsSlice';
+import { selectIsLoaded, selectIsError} from '../../redux/contacts/selectors';
 import css from './App.module.css';
 
 function App() {
