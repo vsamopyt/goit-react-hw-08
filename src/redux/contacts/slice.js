@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts } from './operations';
 import { addContact } from './operations';
 import { deleteContact } from './operations';
+import { logout} from "../auth/operations"
 // import { selectFilter } from '../filters/slice';
 // import { selectContacts } from './selectors';
 
@@ -50,7 +51,26 @@ const slice = createSlice({
       .addCase(deleteContact.rejected, state => {
         state.error = true;
         state.loading = false;
-      });
+      })
+      .addCase(logout.pending, state => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(logout.fulfilled, state => {
+        // state = {
+        //   items: [],
+        //   loading: false,
+        //   error: null,
+        // }
+        state.items = [];
+        state.loading = false;
+        state.error= null;
+      })
+      .addCase(logout.rejected, state => {
+        state.items = [];
+        state.loading = false;
+        state.error= true;
+      })
   },
 });
 
