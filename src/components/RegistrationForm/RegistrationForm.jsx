@@ -81,7 +81,7 @@ export default function RegistrationForm() {
 
 
         <button className={css.userFormButton} type="submit">
-          Submit
+          Sign Up
         </button>
       </Form>
     </Formik>

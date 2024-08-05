@@ -3,7 +3,7 @@ import LoginForm from "../../components/LoginForm/LoginForm"
 export default function LoginPage () {
     return (
         <>
-        <h1>LoginPage</h1>
+        <h1>Log in</h1>
         <LoginForm/>
         </>
     )

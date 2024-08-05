@@ -87,7 +87,7 @@ export default function LoginForm() {
 
 
         <button className={css.userFormButton} type="submit">
-          Submit
+          Log in
         </button>
       </Form>
     </Formik>

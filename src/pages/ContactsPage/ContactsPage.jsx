@@ -1,6 +1,6 @@
 
 // CONTACT LIST
-
+import { Toaster } from 'react-hot-toast';
 import ContactList from '../../components/ContactList/ContactList';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import ContactForm from '../../components/ContactForm/ContactForm';
@@ -47,12 +47,13 @@ export default function ContactsPage () {
   }, [dispatch]);
      return (
     <div className={css.appWraper}>
-      <h1 className={css.appTitle}>Phonebook</h1>
+      <h1 className={css.appTitle}>My Phonebook</h1>
       <ContactForm />
       <SearchBox />
       {isLoading && <div className={css.appLoader}> <BarLoader /> </div>}
       {isError && <p>There is a mistake plese reload the page</p>}
       <ContactList />
+      <div><Toaster/></div>
     </div>
   );
 }

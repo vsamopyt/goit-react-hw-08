@@ -1,8 +1,14 @@
 .header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content:flex-start;
+    /* align-items: center; */
     margin-bottom: 16px;
     border-bottom: 1px solid #2a363b;
   }
   
+
+  .navigationWraper {
+    display: flex;
+    justify-content: space-between;
+  }

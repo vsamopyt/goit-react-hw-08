@@ -12,10 +12,24 @@ export const AppBar = () => {
   // const  isLoggedIn  = useSelector((state)=>state.auth.isLoginIn)
  
 
+  // return (
+  //   <header className={css.header}>
+  //     <Navigation />
+  //     {isLoggedIn ? <UserMenu /> : <AuthNav />}
+  //   </header>
+  // );
+
   return (
     <header className={css.header}>
+      <div className={css.navigationWraper}>
       <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {!isLoggedIn && <AuthNav />}
+      </div>
+     <div>
+     {isLoggedIn && <UserMenu /> }
+     </div>
+      {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
     </header>
   );
+
 };

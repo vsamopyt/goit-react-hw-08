@@ -1,6 +1,8 @@
 import { register } from './operations';
-import {login} from "./operations"
-import {logout} from "./operations"
+import {login} from "./operations";
+import {logout} from "./operations";
+import {refreshUser } from "./operations";
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
@@ -73,6 +75,23 @@ const slice = createSlice({
         state.isloading = false;
         state.isError = true;
         state.isloading = false;
+      })
+      .addCase(refreshUser.pending, state => {
+        state.isloading = true;
+        state.isError = false;
+        state.isRefresching =true;
+      })
+      .addCase(refreshUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        // state.token = action.payload.token;
+        state.isLoggedIn = true;
+        state.isloading = false;
+        state.isRefresching = false;
+      })
+      .addCase(refreshUser.rejected, state => {
+        state.isError = true;
+        state.isloading = false;
+        state.isRefresching = false;
       })
   },
 
